@@ -8,19 +8,19 @@
 #define SS_PIN   D4  // Slave select pin for MFRC522
 #define BUZZER   D2  // Buzzer pin
 
-MFRC522 mfrc522(SS_PIN, RST_PIN);  // Create MFRC522 instance
+MFRC522 mfrc522(SS_PIN, RST_PIN);
 MFRC522::MIFARE_Key key;  
 MFRC522::StatusCode status;      
 
-int blockNum = 2;  // Block number to read data from
+int blockNum = 2; 
 byte bufferLen = 18;
 byte readBlockData[18];
 String data2;
 
-const char* ssid = "";  // WiFi SSID
-const char* password = "";  // WiFi Password
+const char* ssid = "";
+const char* password = "";
 
-const String serverUrl = "http://iot.robify.in/attendance";  // Server URL
+const String serverUrl = "http://iot.robify.in/attendance";
 
 void setup() {
   Serial.begin(9600);
@@ -35,11 +35,11 @@ void setup() {
     delay(1000);
   }
 
-  pinMode(BUZZER, OUTPUT);  // Set BUZZER as OUTPUT
-  SPI.begin();  // Initialize SPI bus
-  mfrc522.PCD_Init();  // Initialize MFRC522 Module
+  pinMode(BUZZER, OUTPUT);
+  SPI.begin();
+  mfrc522.PCD_Init();
 
-  WiFi.begin(ssid, password);  // Connect to Wi-Fi network
+  WiFi.begin(ssid, password);
   Serial.print("Connecting to ");
   Serial.println(ssid);
 
@@ -123,7 +123,7 @@ void sendToServer(String userId) {
     http.addHeader("Content-Type", "application/json");
 
     String postData = "{\"userId\":\"" + userId + "\"}";
-    Serial.println("Sending data: " + postData);  // Debug the data being sent
+    Serial.println("Sending data: " + postData);
 
     int httpResponseCode = http.POST(postData);
 
@@ -133,7 +133,7 @@ void sendToServer(String userId) {
       Serial.println("Response: " + response);
     } else {
       Serial.println("Error on sending POST: " + String(httpResponseCode));
-      Serial.println(http.errorToString(httpResponseCode).c_str());  // Print error message
+      Serial.println(http.errorToString(httpResponseCode).c_str());
     }
 
     http.end();
