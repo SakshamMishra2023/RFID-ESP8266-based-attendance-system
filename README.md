@@ -9,4 +9,5 @@ Developed a smart attendance system leveraging RFID technology and the NodeMCU E
 - Functionalities:
  - Real-Time Attendance Tracking: Users swipe their RFID cards to log attendance, which is immediately recorded and reflected on the webpage.
  - Wi-Fi Connectivity: The NodeMCU ESP8266 communicates with the cloud to update attendance records in real-time.
- - User Management: Admin can add or remove users and their corresponding RFID tags from the system
+ - User Management: Admin can add or remove users and their corresponding RFID tags from the system.
+ - Option to rewrite the 16-bit unique block data.
