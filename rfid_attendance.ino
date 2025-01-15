@@ -4,9 +4,9 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 
-#define RST_PIN  D3  // Reset pin for MFRC522
-#define SS_PIN   D4  // Slave select pin for MFRC522
-#define BUZZER   D2  // Buzzer pin
+#define RST_PIN  D3
+#define SS_PIN   D4
+#define BUZZER   D2
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 MFRC522::MIFARE_Key key;  
