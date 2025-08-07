@@ -1,4 +1,4 @@
-# RFID-based-attendance-system
+# RFID-ESP8266-based-attendance-system
 
 Developed a smart attendance system leveraging RFID technology and the NodeMCU ESP8266 microcontroller. This innovative project streamlines the process of attendance tracking and enhances accuracy and efficiency. Key features and details include:
 
